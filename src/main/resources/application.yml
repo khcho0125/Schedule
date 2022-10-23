@@ -3,3 +3,12 @@ fixedDelay:
 
 initialDelay:
   second: 60
+
+spring:
+  quartz:
+    job-store-type: memory # jdbc 또는 memory, 이력관리 및 장애 복구를 위해 jdbc를 사용하는 것이 좋다.
+                           # Quartz는 다양한 데이터베이스 제품군과 호환되기 때문에 대부분 문제없이 동작한다.
+#    jdbc:
+#      initialize-schema: always # Quartz Schedule에서 사용할 테이블 생성
+#                                # https://velog.velcdn.com/images/park2348190/post/aa915618-13fc-481d-8a75-f0d438ab9a31/image.png
+
