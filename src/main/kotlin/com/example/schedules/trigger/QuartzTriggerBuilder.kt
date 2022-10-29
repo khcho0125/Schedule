@@ -44,6 +44,8 @@ class QuartzTriggerBuilder {
      *          withMisfireHandlingInstruction... - 불발시 대처
      *
      * usingJobData - [JobDataMap][JobExecutionContext.getMergedJobDataMap]에 데이터를 적재
+     *
+     * modifiedByCalendar - 트리거에 적용할 달력의 이름을 설정
      */
     fun newTrigger(name: String, startAt: Date, endAt: Date): Trigger {
         return TriggerBuilder.newTrigger()
