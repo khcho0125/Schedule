@@ -4,7 +4,7 @@ import org.springframework.scheduling.annotation.EnableScheduling
 import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import java.time.LocalDate
-import java.time.LocalDateTime
+import java.time.LocalTime
 import java.util.concurrent.TimeUnit
 
 /**
@@ -15,19 +15,19 @@ import java.util.concurrent.TimeUnit
  */
 @EnableScheduling
 @Component
-class SpringQuartzSchedule {
+class SpringSchedule {
 
     /**
      * **Schedule을 생성하는 어노테이션**
      *
      *
-     * * [fixedDelay][Scheduled.fixedDelay] - 작업이 끝난 시점부터 시간을 카운트한다.
+     * [fixedDelay][Scheduled.fixedDelay] - 작업이 끝난 시점부터 시간을 카운트한다.
      *
      *
-     * * [fixedRate][Scheduled.fixedRate] - 작업의 시작부터 시간을 카운트한다.
+     * [fixedRate][Scheduled.fixedRate] - 작업의 시작부터 시간을 카운트한다.
      *
      *
-     * * [cron][Scheduled.cron] - 크론 표현식을 사용한다.
+     * [cron][Scheduled.cron] - 크론 표현식을 사용한다.
      *
      *     초 - 0 ~ 59
      *
@@ -39,20 +39,20 @@ class SpringQuartzSchedule {
      *
      *     월 - 1 ~ 12
      *
-     *     주 - 0 ~ 6 (Sunday ~ Saturday)
+     *     요일 - 0 ~ 6 (Sunday ~ Saturday)
      *
      *     년 - 생략 가능
      *
      *
-     * * [initialDelay][Scheduled.initialDelay] - 초기 실행 딜레이
+     * [initialDelay][Scheduled.initialDelay] - 초기 실행 딜레이
      *
      *
-     * * [zone][Scheduled.zone] - 시간대 변경
+     * [zone][Scheduled.zone] - 시간대 변경
      *
      *    default - server local
      *
      *
-     * * [timeUnit][Scheduled.timeUnit] - 단위 변경
+     * [timeUnit][Scheduled.timeUnit] - 단위 변경
      *
      *    default - millisecond
       */
@@ -62,7 +62,7 @@ class SpringQuartzSchedule {
         initialDelayString = "\${initialDelay.second}"
     )
     fun schedule() {
-        println("${LocalDate.now()} ${LocalDateTime.now()} [scheduler] - ${System.currentTimeMillis()}")
+        println("${LocalDate.now()} ${LocalTime.now()} [scheduler] - ${System.currentTimeMillis()}")
     }
 
 }
