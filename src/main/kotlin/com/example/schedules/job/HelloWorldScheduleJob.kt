@@ -17,8 +17,7 @@ class HelloWorldScheduleJob : Job {
     override fun execute(context: JobExecutionContext?) {
 
         if (context == null) {
-            println("JobExecuteContext haven't data")
-            return
+            println("JobExecuteContext haven't data"); return
         }
 
         println("[HelloWorldScheduleJob] ${LocalDateTime.now()} - execute: ${context.mergedJobDataMap["Hello"]}")
