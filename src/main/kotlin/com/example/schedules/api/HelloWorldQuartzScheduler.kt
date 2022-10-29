@@ -1,4 +1,4 @@
-package com.example.schedules.schedule
+package com.example.schedules.api
 
 import com.example.schedules.job.QuartzJobBuilder
 import com.example.schedules.trigger.QuartzTriggerBuilder
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class HelloWorldQuartzSchedule(
-    val quartzJobBuilder: QuartzJobBuilder,
-    val quartzTriggerBuilder: QuartzTriggerBuilder
+class HelloWorldQuartzScheduler(
+    private val quartzJobBuilder: QuartzJobBuilder,
+    private val quartzTriggerBuilder: QuartzTriggerBuilder
 ) {
 
     @PostMapping("/hello")
